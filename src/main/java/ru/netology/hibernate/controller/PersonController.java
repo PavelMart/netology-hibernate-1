@@ -27,11 +27,11 @@ public class PersonController {
 
     @GetMapping("/by-age")
     public List<PersonEntity> getPersonsByAgeLessThat(@RequestParam int age) {
-        return personRepository.findByPersonAgeLessThanOrderByPersonAgeAsc(age);
+        return personRepository.findByAgeLessThat(age);
     }
 
     @GetMapping("/by-name-and-surname")
     public Optional<PersonEntity> getPersonsByNameAndSurname(@RequestParam String name, @RequestParam String surname) {
-        return personRepository.findByPersonNameAndPersonSurname(name, surname);
+        return personRepository.findByNameAndSurname(name, surname);
     }
 }
